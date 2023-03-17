@@ -1,0 +1,10 @@
+---
+# tasks file for roles/create_db
+
+  - name: Create DB
+    community.postgresql.postgresql_db:
+      name: "{{ db_name }}"
+      state: present
+    become: yes
+    become_user: "{{ postgresql_user }}"
+

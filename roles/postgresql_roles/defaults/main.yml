@@ -1,0 +1,18 @@
+---
+# defaults file for postgresql_roles
+
+latest_version: "latest"
+postgresql_user: "postgres"
+postgres_service_name: "postgresql"
+postgres_service_enabled: yes
+postgres_service_state: "started"
+postgres_cfg_file: "/var/lib/pgsql/data/pg_hba.conf"
+postgres_init_db: "postgresql-setup initdb"
+postgres_packages:
+  - postgresql
+  - postgresql-server
+  - postgresql-contrib
+  - postgresql-libs
+  - python-psycopg2
+
+

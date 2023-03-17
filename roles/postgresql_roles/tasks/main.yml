@@ -1,0 +1,29 @@
+---
+# tasks file for postgresql_roles
+
+  - name: Update server
+    ansible.builtin.yum:
+      name: "*"
+      state: "{{ latest_version }}"
+
+  - name: Task install Postgresql
+    ansible.builtin.yum:
+      name: "{{ postgres_packages }}"
+      state: "{{ latest_version }}"
+
+  - include: configure.yml
+
+  - name: Start and Enable service
+    ansible.builtin.service:
+      name: "{{ postgres_service_name }}"
+      state: "{{ postgres_service_state }}"
+      enabled: "{{ postgres_service_enabled }}"
+
+  - name: Create DB
+    community.postgresql.postgresql_db:
+      name: "{{ db_name }}"
+      state: present
+    become: yes
+    become_user: "{{ postgresql_user }}"
+
+

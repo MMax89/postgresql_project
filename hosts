@@ -1,0 +1,5 @@
+# A collection of database servers in the 'dbservers' group
+
+[dbservers]
+srv-postgresql
+

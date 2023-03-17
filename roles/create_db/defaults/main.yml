@@ -1,0 +1,5 @@
+---
+# defaults file for roles/create_db
+
+  postgresql_user: "postgres"
+

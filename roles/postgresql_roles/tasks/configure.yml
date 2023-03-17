@@ -1,0 +1,9 @@
+
+  - name: Check if Postgresql is initialized
+    ansible.builtin.stat:
+      path: "{{ postgres_cfg_file }}"
+    register: postgres_data
+
+  - name: Initialize Postgresql
+    ansible.builtin.shell: "{{ postgres_init_db }}"
+    when: not postgres_data.stat.exists

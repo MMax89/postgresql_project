@@ -1,0 +1,4 @@
+---
+# vars file for postgresql_roles
+
+  db_name: my_db

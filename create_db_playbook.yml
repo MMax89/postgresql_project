@@ -1,0 +1,6 @@
+  - name: Install PostgreSQL
+    hosts: dbservers
+    gather_facts: yes
+    roles:
+       - create_db
+

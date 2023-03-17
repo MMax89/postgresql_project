@@ -1,0 +1,4 @@
+---
+# vars file for roles/create_db
+
+  db_name: second_db
